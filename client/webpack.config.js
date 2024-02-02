@@ -22,7 +22,10 @@ module.exports = () => {
         template: "./index.html",
         title: "Code Snippets",
       }),
-      new GenerateSW(),
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
+      }),
       new WebpackPwaManifest({
         name: "Code Sippet Text Editor",
         short_name: "Editor",
